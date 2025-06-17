@@ -1,0 +1,35 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+.animate-fadeInLeft {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeInLeft 0.5s ease-out forwards;
+}
+
+/* Nav link hover effect */
+.nav-link {
+  position: relative;
+}
+.nav-link:hover {
+  transform: scale(1.1);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #f59e0b;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
